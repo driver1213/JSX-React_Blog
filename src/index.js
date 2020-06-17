@@ -2,55 +2,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import faker from 'faker'
-
+import CommentDetail from './CommentDetail'
+import ApprovalCard from './ApprovalCard'
 
 //create a react component
 const App = () => {
     
     return (
         <div className="ui container comments">
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Jean
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 6:00 PM</span>
-                    </div>
-                    <div className="text">Nice blog post!</div>
+            <ApprovalCard>
+                <div>
+                    <h4>Warning!</h4>
+                        Are you sure you want to do this?
                 </div>
-            </div>
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Michelle
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 6:00 PM</span>
-                    </div>
-                    <div className="text">Nice blog post!</div>
-                </div>
-            </div>
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Diego
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 6:00 PM</span>
-                    </div>
-                    <div className="text">Nice blog post!</div>
-                </div>
-            </div>
+            </ApprovalCard>
+            <ApprovalCard >
+            <CommentDetail 
+                author= "Michelle" 
+                time="Today at 4 pm" 
+                comments="Hey little yo!" 
+                avatar={faker.image.avatar()} 
+            />
+            </ApprovalCard>
+            <ApprovalCard>
+            <CommentDetail 
+                author= "Jean" 
+                time="Today at 2 pm" 
+                comments="Hi daddy!"
+                avatar={faker.image.avatar()}
+            />
+            </ApprovalCard>
+            <ApprovalCard>
+            <CommentDetail 
+                author= "Diego" 
+                time="Today at 11 pm" 
+                comments="My girls, love you!"
+                avatar={faker.image.avatar()}
+            />
+            </ApprovalCard>
         </div>
     )
 }
